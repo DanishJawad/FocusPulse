@@ -1,0 +1,80 @@
+.payment-success-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: transparent;
+}
+
+.success-card {
+  background: rgba(22, 33, 62, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.success-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.success-card h1 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.success-card p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.premium-features {
+  background: rgba(102, 126, 234, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.premium-features h3 {
+  margin: 0 0 1rem 0;
+  color: #fff;
+  text-align: center;
+}
+
+.premium-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.premium-features li {
+  padding: 0.75rem 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+}
+
+.btn-continue {
+  padding: 1rem 3rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn-continue:hover {
+  transform: translateY(-2px);
+}

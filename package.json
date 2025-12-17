@@ -1,0 +1,28 @@
+{
+  "name": "focuspulse-mern",
+  "version": "1.0.0",
+  "description": "FocusPulse - MERN Stack Productivity Timer Application",
+  "scripts": {
+    "install-all": "npm run install-backend && npm run install-frontend",
+    "install-backend": "cd backend && npm install",
+    "install-frontend": "cd frontend && npm install",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm start",
+    "build": "cd frontend && npm run build"
+  },
+  "keywords": [
+    "mern",
+    "productivity",
+    "timer",
+    "react",
+    "mongodb",
+    "express",
+    "nodejs"
+  ],
+  "author": "COMSATS Student",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

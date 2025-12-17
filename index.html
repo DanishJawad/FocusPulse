@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Pulse</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">Focus<span>Pulse</span></h1>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Timer</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="timer-page">
+        <div class="input-group">
+            <em><label for="task-input">What are you working on?</label></em>
+            <input 
+                type="text" 
+                id="task-input" 
+                placeholder="e.g., Writing project proposal"
+               length="70"
+            >
+        </div>
+        <div class="timer-display" id="timer-display-wrapper">
+            <svg class="timer-circle" width="420" height="420">
+                <defs>
+                    <linearGradient id="timer-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#7b2cbf;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <circle class="timer-circle-bg" cx="210" cy="210" r="180"></circle>
+                <circle class="timer-circle-progress" cx="210" cy="210" r="180"></circle>
+            </svg>
+            <div class="timer-text">
+                <span id="timer">00:00:00</span>
+            </div>
+        </div>
+        <div class="session-info">
+            <p id="session-status">Tap the timer to start</p>
+            <span class="status-separator">or</span>
+            <button id="stop-timer-btn" class="stop-btn">End Session</button>
+        </div>
+        <div class="today-focus-inline">
+            <h3>Today's Focus</h3>
+            <p class="stat-value" id="today-time">0m</p>
+        </div>
+    </main>
+    <div id="mood-modal" class="modal">
+        <div class="modal-content">
+            <h2>How did you feel during this session?</h2>
+            <p class="modal-subtitle">Your mood helps us understand your productivity patterns</p>
+            
+            <div class="mood-options">
+                <button class="mood-btn" data-mood="focused">
+                    <span class="mood-icon">🎯</span>
+                    <span>Focused</span>
+                </button>
+                <button class="mood-btn" data-mood="calm">
+                    <span class="mood-icon">😌</span>
+                    <span>Calm</span>
+                </button>
+                <button class="mood-btn" data-mood="energized">
+                    <span class="mood-icon">⚡</span>
+                    <span>Energized</span>
+                </button>
+                <button class="mood-btn" data-mood="distracted">
+                    <span class="mood-icon">😵</span>
+                    <span>Distracted</span>
+                </button>
+                <button class="mood-btn" data-mood="tired">
+                    <span class="mood-icon">😴</span>
+                    <span>Tired</span>
+                </button>
+                <button class="mood-btn" data-mood="stressed">
+                    <span class="mood-icon">😰</span>
+                    <span>Stressed</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="custom-modal" class="modal">
+        <div class="modal-content" id="custom-modal-content">
+            <p id="custom-modal-message"></p>
+            <div id="custom-modal-buttons"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/timer.js"></script>
+</body>
+</html>

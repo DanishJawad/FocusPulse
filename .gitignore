@@ -1,0 +1,43 @@
+# macOS
+.DS_Store
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Logs
+logs
+*.log
+lerna-debug.log
+
+# Environment variables
+.env
+.env*.local
+backend/.env
+frontend/.env
+
+# Build outputs
+dist/
+build/
+coverage/
+.next/
+out/
+
+# Frontend build caches
+frontend/build/
+frontend/.cache/
+frontend/.next/
+
+# Tooling
+.vscode/
+.idea/
+
+# Temporary files
+*.swp
+*.swo
+.tmp/
+.cache/
+coverage/

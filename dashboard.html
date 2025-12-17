@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Pulse - Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">Focus<span>Pulse</span></h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Timer</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="dashboard-page">
+        <div class="dashboard-container">
+            <h2 class="page-title">Your Performance Dashboard</h2>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <h3>Total Focus Time</h3>
+                    <p class="summary-value" id="total-focus-time">0h 0m</p>
+                    <p class="summary-label">All time</p>
+                </div>
+                <div class="summary-card">
+                    <h3>Total Sessions</h3>
+                    <p class="summary-value" id="dashboard-total-sessions">0</p>
+                    <p class="summary-label">Completed</p>
+                </div>
+                <div class="summary-card">
+                    <h3>Average Session</h3>
+                    <p class="summary-value" id="dashboard-avg-duration">0m</p>
+                    <p class="summary-label">Duration</p>
+                </div>
+                <div class="summary-card">
+                    <h3>Current Streak</h3>
+                    <p class="summary-value" id="current-streak">0</p>
+                    <p class="summary-label">Days</p>
+                </div>
+            </div>
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>Daily Focus (Last 7 Days)</h3>
+                    <canvas id="daily-chart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Mood Distribution</h3>
+                    <canvas id="mood-chart"></canvas>
+                </div>
+                <div class="chart-card full-width">
+                    <h3>Weekly Performance</h3>
+                    <canvas id="weekly-chart"></canvas>
+                </div>
+            </div>
+            <div class="recent-sessions">
+                <h3>Recent Sessions</h3>
+                <div id="sessions-list">
+                    <p class="no-data">No sessions yet. Start your first focus session!</p>
+                </div>
+            </div>
+            <div class="data-management">
+                <button id="clear-data-btn" class="btn btn-danger-outline">Clear All Data</button>
+            </div>
+        </div>
+    </main>
+    <div id="custom-modal" class="modal">
+        <div class="modal-content" id="custom-modal-content">
+            <p id="custom-modal-message"></p>
+            <div id="custom-modal-buttons"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+.navbar {
+  background: #0a1929;
+  padding: 1rem 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.nav-container {
+  max-width: 100%;
+  margin: 0;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo-focus {
+  color: #60d5ff;
+  font-weight: 700;
+}
+
+.logo-pulse {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: white;
+}
+
+.nav-right-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.user-name {
+  color: white;
+  font-weight: 500;
+}
+
+.premium-badge {
+  margin-left: 0.5rem;
+  font-size: 0.85rem;
+  background: rgba(255,215,0,0.2);
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+}
+
+.session-limit-badge {
+  background: rgba(102, 126, 234, 0.3);
+  color: #4ade80;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(102, 126, 234, 0.4);
+  transition: all 0.3s;
+}
+
+.session-limit-badge.limit-reached {
+  background: rgba(248, 113, 113, 0.2);
+  color: #f87171;
+  border-color: rgba(248, 113, 113, 0.4);
+  animation: pulse-nav 2s ease-in-out infinite;
+}
+
+@keyframes pulse-nav {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.unlimited-badge {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(240, 147, 251, 0.3));
+  color: #f093fb;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 1px solid rgba(240, 147, 251, 0.5);
+}
+
+.btn-logout {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.btn-logout:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.btn-upgrade {
+  background: linear-gradient(135deg, #f093fb 0%, #a855f7 100%);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
+  font-size: 0.9rem;
+}
+
+.btn-upgrade:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(240, 147, 251, 0.5);
+}
