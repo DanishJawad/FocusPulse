@@ -1,12 +1,8 @@
 .timer-page {
-  max-width: 100%;
   width: 100vw;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  background: transparent;
-  position: relative;
-  z-index: 1;
 }
 
 .timer-content-wrapper {
@@ -14,7 +10,6 @@
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
-  position: relative;
   padding: 3rem 0;
 }
 
@@ -29,7 +24,6 @@
 
 .input-group {
   margin-bottom: 1.5rem;
-  transition: all 0.3s;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -37,16 +31,14 @@
 }
 
 .input-group label {
-  display: block;
   font-size: 2.8rem;
   color: #fff;
   margin-bottom: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.5px;
-  text-align: center;
 }
 
-.task-select {
+.task-select, .input-group input {
   width: 100%;
   max-width: 500px;
   padding: 1rem;
@@ -54,15 +46,18 @@
   border: 2px solid rgba(102, 126, 234, 0.3);
   border-radius: 12px;
   text-align: center;
-  margin-bottom: 1rem;
   background: rgba(15, 52, 96, 0.3);
   backdrop-filter: blur(10px);
   color: #fff;
-  cursor: pointer;
   transition: all 0.3s;
 }
 
-.task-select:focus {
+.task-select {
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.task-select:focus, .input-group input:focus {
   outline: none;
   border-color: #667eea;
   box-shadow: 0 0 25px rgba(102, 126, 234, 0.5);
@@ -74,36 +69,12 @@
   padding: 0.5rem;
 }
 
-.input-group input {
-  width: 100%;
-  max-width: 500px;
-  padding: 1rem;
-  font-size: 1.1rem;
-  border: 2px solid rgba(102, 126, 234, 0.3);
-  border-radius: 12px;
-  text-align: center;
-  transition: all 0.3s;
-  background: rgba(15, 52, 96, 0.3);
-  backdrop-filter: blur(10px);
-  color: #fff;
-  display: block;
-  margin: 0 auto;
-}
-
-.input-group input:focus {
-  outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 25px rgba(102, 126, 234, 0.5);
-}
-
 .timer-display {
   position: relative;
   width: 420px;
   height: 420px;
   margin: 2rem auto;
   cursor: pointer;
-  opacity: 1;
-  transform: scale(1);
   transition: all 0.5s;
   filter: drop-shadow(0 0 30px rgba(102, 126, 234, 0.4));
 }
@@ -189,77 +160,34 @@
   margin: 0;
 }
 
-.session-limit-info {
+.session-limit-info, .premium-badge-info {
   margin: 2rem auto;
   max-width: 500px;
   padding: 1.5rem;
-  background: rgba(120, 0, 255, 0.15);
   backdrop-filter: blur(10px);
-  border: 2px solid rgba(120, 0, 255, 0.3);
   border-radius: 15px;
   text-align: center;
 }
 
-.limit-text {
-  font-size: 1.2rem;
-  margin: 0 0 1rem 0;
-  color: #fff;
-  font-weight: 600;
-}
-
-.limit-ok {
-  color: #4ade80;
-  font-weight: 700;
-}
-
-.limit-reached {
-  color: #f87171;
-  font-weight: 700;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
-}
-
-.limit-warning {
-  margin: 0.5rem 0 0 0;
-  color: #fbbf24;
-  font-size: 1rem;
-}
-
-.limit-warning a {
-  color: #a855f7;
-  text-decoration: none;
-  font-weight: 700;
-  border-bottom: 2px solid #a855f7;
-  transition: all 0.3s;
-}
-
-.limit-warning a:hover {
-  color: #f093fb;
-  border-bottom-color: #f093fb;
-}
-
-.limit-hint {
-  margin: 0.5rem 0 0 0;
-  color: #a855f7;
-  font-size: 0.95rem;
-  opacity: 0.8;
+.session-limit-info {
+  background: rgba(120, 0, 255, 0.15);
+  border: 2px solid rgba(120, 0, 255, 0.3);
 }
 
 .premium-badge-info {
-  margin: 2rem auto;
-  max-width: 500px;
-  padding: 1.5rem;
   background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(240, 147, 251, 0.2));
-  backdrop-filter: blur(10px);
   border: 2px solid rgba(240, 147, 251, 0.5);
-  border-radius: 15px;
-  text-align: center;
   box-shadow: 0 0 30px rgba(240, 147, 251, 0.3);
 }
+
+.limit-text { font-size: 1.2rem; margin: 0 0 1rem 0; color: #fff; font-weight: 600; }
+.limit-ok { color: #4ade80; font-weight: 700; }
+.limit-reached { color: #f87171; font-weight: 700; animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+.limit-warning { margin: 0.5rem 0 0 0; color: #fbbf24; font-size: 1rem; }
+.limit-warning a { color: #a855f7; text-decoration: none; font-weight: 700; border-bottom: 2px solid #a855f7; transition: all 0.3s; }
+.limit-warning a:hover { color: #f093fb; border-bottom-color: #f093fb; }
+.limit-hint { margin: 0.5rem 0 0 0; color: #a855f7; font-size: 0.95rem; opacity: 0.8; }
 
 .premium-text {
   margin: 0;

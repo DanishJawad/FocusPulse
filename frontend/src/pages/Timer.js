@@ -32,19 +32,11 @@ const Timer = () => {
 
   useEffect(() => {
     if (isRunning) {
-      intervalRef.current = setInterval(() => {
-        setSeconds(s => s + 1);
-      }, 1000);
-    } else {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
+      intervalRef.current = setInterval(() => setSeconds(s => s + 1), 1000);
+    } else if (intervalRef.current) {
+      clearInterval(intervalRef.current);
     }
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
+    return () => intervalRef.current && clearInterval(intervalRef.current);
   }, [isRunning]);
 
   const loadTodayStats = async () => {
@@ -81,10 +73,8 @@ const Timer = () => {
   };
 
   const formatTime = (secs) => {
-    const hrs = Math.floor(secs / 3600);
-    const mins = Math.floor((secs % 3600) / 60);
-    const sec = secs % 60;
-    return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+    const h = Math.floor(secs / 3600), m = Math.floor((secs % 3600) / 60), s = secs % 60;
+    return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
   };
 
   const handleTimerClick = () => {
@@ -97,9 +87,7 @@ const Timer = () => {
 
   const handleStopSession = () => {
     if (seconds < 60) {
-      if (window.confirm('Session less than 1 minute. Discard?')) {
-        resetTimer();
-      }
+      window.confirm('Session less than 1 minute. Discard?') && resetTimer();
       return;
     }
     setIsRunning(false);

@@ -57,8 +57,6 @@ const Dashboard = () => {
       const res = await axios.post('/api/payment/create-checkout-session');
       window.location.href = res.data.url;
     } catch (error) {
-      console.error('Payment error:', error);
-      console.error('Error response:', error.response?.data);
       alert('Failed to initiate payment: ' + (error.response?.data?.message || error.message));
     }
   };
@@ -70,7 +68,6 @@ const Dashboard = () => {
       alert('Demo data added successfully!');
       loadData();
     } catch (error) {
-      console.error('Error adding demo data:', error);
       alert('Failed to add demo data');
     }
   };
@@ -82,21 +79,16 @@ const Dashboard = () => {
       alert('All sessions cleared successfully!');
       loadData();
     } catch (error) {
-      console.error('Error clearing data:', error);
       alert('Failed to clear data');
     }
   };
 
   const formatTime = (seconds) => {
-    const hrs = Math.floor(seconds / 3600);
-    const mins = Math.floor((seconds % 3600) / 60);
-    return hrs > 0 ? `${hrs}h ${mins}m` : `${mins}m`;
+    const h = Math.floor(seconds / 3600), m = Math.floor((seconds % 3600) / 60);
+    return h > 0 ? `${h}h ${m}m` : `${m}m`;
   };
 
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
-  };
+  const formatDate = (d) => new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
 
   if (loading) {
     return <div className="loading">Loading...</div>;

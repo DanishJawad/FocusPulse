@@ -1,7 +1,8 @@
 {
-  "name": "focuspulse-mern",
+  "name": "focuspulse",
   "version": "1.0.0",
-  "description": "FocusPulse - MERN Stack Productivity Timer Application",
+  "private": true,
+  "description": "FocusPulse - full-stack productivity timer application",
   "scripts": {
     "install-all": "npm run install-backend && npm run install-frontend",
     "install-backend": "cd backend && npm install",
