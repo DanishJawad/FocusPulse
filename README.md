@@ -9,6 +9,20 @@ FocusPulse is a full-stack productivity app for tracking focus sessions, tasks, 
 - MongoDB persistence through Mongoose models
 - CRA frontend with reusable pages and components
 
+## Screenshots
+
+### Tasks Page
+
+![Tasks screenshot](./screenshots/Tasks.png)
+
+### Dashboard
+
+![Dashboard screenshot](./screenshots/dashboard.png)
+
+### Timer
+
+![Timer screenshot](./screenshots/timer.png)
+
 ## Project Structure
 
 ```
@@ -63,13 +77,5 @@ The frontend runs on the CRA default port and the backend listens on port `5000`
 - `npm run server` starts the backend only
 - `npm run client` starts the frontend only
 - `npm run build` builds the frontend for production
-
-## Screenshots
-
-Add your screenshots here before publishing the repository.
-
-![Tasks screenshot](./screenshots/Tasks.png)
-![Dashboard screenshot](./screenshots/dashboard.png)
-![Timer screenshot](./screenshots/timer.png)
 
 
